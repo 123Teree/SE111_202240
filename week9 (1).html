@@ -22,7 +22,27 @@
 		{first:"Buzz", last:"Lightyear", credit:"Toy Story" },
 		{first:"Marion", last:"Cobretti", credit:"Cobra" }
 	]
-	
+	var body = document.querySelector(`body`)
+
+	for (let i = 0; i <people.length; i++){
+		var tempDiv
+		tempDiv = document.createElement(`div`)
+
+		tempDiv.setAttribute(`id`, String(i))
+
+		tempDiv.setAttribute(`class`, `border`)
+
+		for (key in people[i]){
+		var temp = document.createElement(`p`)
+		
+		var temptext = document.createTextNode(people[i][key])
+
+		temp.appendChild(temptext)
+		tempDiv.appendChild(temp)
+
+		}
+		body.appendChild(tempDiv)
+	}
 </script>
 
 </html>
